@@ -38,22 +38,14 @@ const Dashboard = () => {
   }
 
   const stats = [
-    { title: 'Total Patients', value: summary?.totalPatients || 24, icon: Users },
-    { title: 'Consultations', value: summary?.consultations || 12, icon: Stethoscope },
-    { title: 'AI Scans', value: summary?.criticalCases || 8, icon: AlertCircle },
-    { title: 'Active Treatments', value: summary?.activeTreatments || 3, icon: Activity },
+    { title: 'Total Patients', value: summary?.totalPatients || 0, icon: Users },
+    { title: 'Consultations', value: summary?.consultations || 0, icon: Stethoscope },
+    { title: 'AI Scans', value: summary?.criticalCases || 0, icon: AlertCircle },
+    { title: 'Active Treatments', value: summary?.activeTreatments || 0, icon: Activity },
   ];
 
-  // Filtering bookings securely based on status
-  // Mock fallback logic for UI testing if /bookings drops empty array
-  const activeBookings = bookings.length > 0 ? bookings.filter(b => {
-    const isCompleted = b.status?.toLowerCase() === 'completed';
-    return bookingFilter === 'completed' ? isCompleted : !isCompleted;
-  }) : [
-    { id: 1, doctorName: 'Dr. Sarah Jenkins', date: '2026-03-30', time: '14:30', status: 'Pending', cost: '$80', experience: '12+ Years' },
-    { id: 2, doctorName: 'Dr. Michael Chen', date: '2026-03-22', time: '10:00', status: 'Completed', cost: '$95', experience: '8+ Years' },
-    { id: 3, doctorName: 'Dr. Emily Watson', date: '2026-03-24', time: '11:15', status: 'Rejected', cost: '$70', experience: '15+ Years' }
-  ].filter(b => {
+  // Filtering bookings securely based on status directly from API data
+  const activeBookings = bookings.filter(b => {
     const isCompleted = b.status?.toLowerCase() === 'completed' || b.status?.toLowerCase() === 'rejected';
     return bookingFilter === 'completed' ? isCompleted : !isCompleted;
   });

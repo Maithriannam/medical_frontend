@@ -153,7 +153,7 @@ const UploadScan = () => {
           const syms = ['Redness', 'Itching', 'Swelling', 'Blistering', 'Flaking', 'Pain'];
           return (
             <div>
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6">What are your primary symptoms?</h3>
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">What are your primary symptoms?</h3>
               <div className="flex flex-wrap gap-3">
                 {syms.map(s => (
                   <button key={s} onClick={() => toggleSymptom(s)} className={`px-4 py-2 rounded-lg border text-sm font-medium transition-colors ${answers.symptoms.includes(s) ? 'bg-teal-50 border-primary-teal text-primary-teal dark:bg-gray-700' : 'border-gray-200 text-gray-600 hover:border-primary-teal dark:border-gray-600 dark:text-gray-300'}`}>
@@ -167,7 +167,7 @@ const UploadScan = () => {
           const durations = ['Just today', 'A few days', 'About a week', 'More than a month'];
           return (
             <div>
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6">How long have you been experiencing this?</h3>
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">How long have you been experiencing this?</h3>
               <div className="flex flex-col gap-3">
                 {durations.map(d => (
                   <label key={d} className="flex items-center gap-3 p-3 border border-gray-200 dark:border-gray-700 rounded-lg cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700">
@@ -181,7 +181,7 @@ const UploadScan = () => {
         case 3:
           return (
             <div>
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-8">On a scale of 1-10, how severe is the discomfort?</h3>
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">On a scale of 1-10, how severe is the discomfort?</h3>
               <input type="range" min="1" max="10" value={answers.severity} onChange={(e) => setAnswers({...answers, severity: parseInt(e.target.value)})} className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-primary-teal" />
               <div className="flex justify-between mt-4 text-sm text-gray-500">
                 <span>Mild (1)</span>
@@ -193,7 +193,7 @@ const UploadScan = () => {
         case 4:
           return (
             <div>
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Description of the problem</h3>
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Description of the problem</h3>
               <p className="text-sm text-gray-500 mb-4">Please provide detailed context about how it feels, when it worsens, etc.</p>
               <textarea 
                 value={answers.description} 
@@ -206,7 +206,7 @@ const UploadScan = () => {
         case 5:
           return (
             <div>
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Any relevant medical history?</h3>
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Any relevant medical history?</h3>
               <p className="text-sm text-gray-500 mb-4">Mention existing conditions or allergies.</p>
               <textarea 
                 value={answers.history} 
@@ -222,7 +222,7 @@ const UploadScan = () => {
     return (
       <div className="max-w-3xl mx-auto mt-8 animate-in slide-in-from-right fade-in duration-300">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">Symptom Assessment</h1>
+          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-2">Symptom Assessment</h1>
           <p className="text-gray-500 dark:text-gray-400">Answer a few questions for a better analysis.</p>
         </div>
 

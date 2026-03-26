@@ -79,9 +79,14 @@ const Symptoms = () => {
 
   return (
     <div className="space-y-6 max-w-5xl mx-auto md:mt-4">
-      <div className="flex flex-col gap-1 mb-8 text-left">
-        <h1 className="text-3xl lg:text-4xl font-bold text-text-dark dark:text-white">Symptom Assessment</h1>
-        <p className="text-gray-500 dark:text-gray-400 text-lg">Select the primary symptoms you are experiencing to generate a pre-clinical assessment.</p>
+      <div className="flex flex-col gap-2 mb-10 text-left">
+        <h1 className="text-4xl lg:text-5xl font-black tracking-tight text-text-dark dark:text-white">
+          Symptom <span className="text-primary-teal bg-clip-text text-transparent bg-gradient-to-r from-primary-teal to-blue-500">Assessment</span>
+        </h1>
+        <p className="text-gray-500 dark:text-gray-400 text-lg md:text-xl font-medium max-w-2xl leading-relaxed">
+          Select the primary symptoms you are experiencing to generate a <span className="text-primary-teal/80 dark:text-primary-teal font-semibold">pre-clinical assessment</span>.
+        </p>
+        <div className="h-1.5 w-24 bg-primary-teal rounded-full mt-2 opacity-50"></div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

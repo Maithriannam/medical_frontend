@@ -18,7 +18,11 @@ api.interceptors.request.use((config) => {
 api.interceptors.response.use((response) => {
   return response;
 }, (error) => {
-  toast.error(error.response?.data?.message || 'Server connection error');
+  // Only show toast if there's an actual response with a message from the server.
+  // This prevents 'Server connection error' spam when the backend is simply not running.
+  if (error.response?.data?.message) {
+    toast.error(error.response.data.message);
+  }
   return Promise.reject(error);
 });
 

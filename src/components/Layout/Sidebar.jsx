@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { LayoutDashboard, Upload, ClipboardList, Stethoscope, Building2, History, Leaf, MessageSquare } from 'lucide-react';
+import { LayoutDashboard, Upload, ClipboardList, Stethoscope, Building2, History, Leaf, MessageSquare, Sparkles } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 
 const navItems = [
@@ -21,7 +21,7 @@ const Sidebar = () => {
     <aside className="w-64 bg-gray-900 text-gray-300 flex flex-col h-full flex-shrink-0 transition-colors duration-200">
       <div className="p-6">
         <h2 className="text-2xl font-bold text-white tracking-wide flex items-center gap-2">
-          <Stethoscope className="text-primary-teal" />
+          <Sparkles className="text-primary-teal" />
           <span>DermaAI</span>
         </h2>
       </div>
