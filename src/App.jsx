@@ -6,7 +6,8 @@ import MainLayout from './components/Layout/MainLayout';
 import Login from './pages/Auth/Login';
 import Register from './pages/Auth/Register';
 import Dashboard from './pages/Dashboard';
-import Diagnosis from './pages/Diagnosis';
+import UploadScan from './pages/UploadScan';
+import Symptoms from './pages/Symptoms';
 import Doctors from './pages/Doctors';
 import Hospitals from './pages/Hospitals';
 import History from './pages/History';
@@ -35,7 +36,8 @@ function App() {
         <Route path="/" element={<MainLayout />}>
           <Route index element={<Navigate to="/dashboard" replace />} />
           <Route path="dashboard" element={<Dashboard />} />
-          <Route path="diagnosis" element={<Diagnosis />} />
+          <Route path="upload-scan" element={<UploadScan />} />
+          <Route path="symptoms" element={<Symptoms />} />
           <Route path="doctors" element={<Doctors />} />
           <Route path="hospitals" element={<Hospitals />} />
           <Route path="history" element={<History />} />
